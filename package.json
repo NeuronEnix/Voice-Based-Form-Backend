@@ -1,0 +1,35 @@
+{
+  "name": "voice-based-form-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neuron909/Voice-Based-Form-Backend.git"
+  },
+  "author": "Kaushik R Bangera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neuron909/Voice-Based-Form-Backend/issues"
+  },
+  "homepage": "https://github.com/neuron909/Voice-Based-Form-Backend#readme",
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.27.0",
+    "mongoose": "^5.9.25"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
