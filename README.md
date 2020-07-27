@@ -1,6 +1,7 @@
 # Voice-Based-Form-Backend
 
 ## Available Scripts
+##### Note: Please make sure that [Node](https://nodejs.org/en/download/) is installed.
 
 ### In the project directory, you can run:
 
