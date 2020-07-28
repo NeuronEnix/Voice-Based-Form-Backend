@@ -9,6 +9,8 @@ db.set( 'autoIndex'          , true  ) ;
 
 // Importing schema 
 require( './app/user/user.model' ) ;
+require( './app/form/ans/form.ans.model') ;
+require( './app/form/template/form.template.model') ;
 
 // Connects to DB
 module.exports.connect = () => {

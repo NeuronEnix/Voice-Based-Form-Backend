@@ -1,0 +1,33 @@
+{
+    "users" : {
+        "_id" : "ObjectID",
+        "Name" : { 
+            "F" : "String -(First Name)",
+            "L" : "String -(Last  Name)"
+        },
+        "Email" : "String",
+        "Password": "String",
+        "TS" : "Date -(Timestamp of new Refresh Token)",
+        "Type" : "String -( [ a-admin; u-user ] )",
+        "Status" : "String -( [ a-active; d-disabled ] )"
+    },
+
+    "form_template" : {
+        "_id" : "ObjectID",
+        "UserID" : "ObjectID -( _id of the user who creates the form )",
+        "Data" : [
+            {
+                "Que" : "String -( Question )",
+                "Opt" : [ "String -( array of option )" ],
+                "Typ" : "String -( Indicates Type of Option Ex: TextField, RadioBtn )"
+            }
+        ]
+    },
+    
+    "form_ans" : {
+        "_id" : "ObjectID",
+        "FormTemplateID" : "ObjectID -( _id of the Form template )",
+        "UserID" : "ObjectID -( _id of the user who filled the form )",
+        "Data" : [ "String -( Array of ans ) " ]
+    }
+}
