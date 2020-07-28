@@ -5,9 +5,9 @@ const errData  = require( '../../response' ).errData ;
 const bcryptRounds = parseInt( process.env.BCRYPT_ROUNDS ) ;
 
 var userSchema = new mongoose.Schema ({
+    Name     : { type : new mongoose.Schema({ F: String, L: String,}, {_id:false} ) },
     Email    : { type : String, index: { unique: true } },
     Password : String,
-    FullName : String,
     TS       : Date, // RefreshToken creation timestamp
     Type     : { type : String, default: 'u' },     // 'a' -> admin  ; 'u' -> user
     Status   : { type : String, default :'a' },     // 'a' -> active ; 'd' -> disabled
