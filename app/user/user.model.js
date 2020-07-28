@@ -1,11 +1,11 @@
 const bcrypt   = require( 'bcryptjs' ) ;
-const mongoose = require( 'mongoose' ) ;
+const db = require( 'mongoose' ) ;
 
 const errData  = require( '../../response' ).errData ;
 const bcryptRounds = parseInt( process.env.BCRYPT_ROUNDS ) ;
 
-var userSchema = new mongoose.Schema ({
-    Name     : { type : new mongoose.Schema({ F: String, L: String,}, {_id:false} ) },
+var userSchema = new db.Schema ({
+    Name     : { F: String, L: String,  _id:false },
     Email    : { type : String, index: { unique: true } },
     Password : String,
     TS       : Date, // RefreshToken creation timestamp
@@ -35,5 +35,5 @@ userSchema.statics.LookUp = async ( { Email, Password } ) => {
     throw { err : errData.invalidCredential, info : 'Email or Password is Incorrect!' } ;
 }
 
-const User = mongoose.model( 'users', userSchema ) ;
+const User = db.model( 'users', userSchema ) ;
 module.exports = User;
