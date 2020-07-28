@@ -66,7 +66,7 @@ module.exports.newRefreshToken = async ( res, user ) => {
     return await userSave ;
 }
 
-router.post( '/refresh-token' , async ( req, res ) => {
+router.get( '/refresh-token' , async ( req, res ) => {
     try {
         await this.newRefreshToken( res, req.user ) ;
         return respond.ok( res, { AccessToken : this.newAccessToken( req.user ) } ) ;
@@ -75,7 +75,7 @@ router.post( '/refresh-token' , async ( req, res ) => {
     }
 }) ;
 
-router.post( '/access-token', async ( req, res ) => {
+router.get( '/access-token', async ( req, res ) => {
     return respond.ok( res, { AccessToken : this.newAccessToken( req.user ), Type : req.user.Type } ) ;
 }) ;
 

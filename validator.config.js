@@ -29,13 +29,5 @@ module.exports.user = {
         Email    : userSchema.email,
         Password : userSchema.pass,
     }),
-    
-    signOut : Joi.forbidden(),
 
-} ;
-
-// ---------- Token ---------- //
-module.exports.auth = {
-    refreshToken : Joi.forbidden(),
-    accessToken  : Joi.forbidden(),
 } ;
