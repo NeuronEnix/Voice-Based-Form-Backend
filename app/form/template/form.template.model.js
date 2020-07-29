@@ -6,6 +6,8 @@ const ObjectID = db.Schema.Types.ObjectId;
 
 const formTemplateSchema = new db.Schema({
     UserID : {type:ObjectID, index:true, ref:"users" },
+    Title  : String,
+    Desc   : String,
     Data   : [{
         Que : String,
         Opt : { type:db.Schema.Types.Array },
