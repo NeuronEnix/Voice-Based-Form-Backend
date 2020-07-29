@@ -8,3 +8,13 @@ module.exports.new = async ( req, res ) => {
     await template.save();
     return respond.ok( res, { FormTemplateID : template._id } );
 };
+
+module.exports.list = async ( req, res ) => {
+    const pageNo = req.params.P ;
+    return respond.ok( res, await FormTemplate.find( {}, {__v:0, Data:0} ).skip( 10*pageNo ).limit( 10 ) ) ; 
+};
+
+module.exports.detail = async ( req, res ) => {
+    console.log( req.body)
+    return  respond.ok( res, await FormTemplate.findOne( {_id:req.body.FormTemplateID}, {_id:0,__v:0} ) ) ; 
+};
