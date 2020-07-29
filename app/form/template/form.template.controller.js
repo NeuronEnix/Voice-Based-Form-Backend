@@ -10,11 +10,11 @@ module.exports.new = async ( req, res ) => {
 };
 
 module.exports.list = async ( req, res ) => {
-    const pageNo = req.params.P ;
+    const pageNo = req.params.PageNo ;
     return respond.ok( res, await FormTemplate.find( {}, {__v:0, Data:0} ).skip( 10*pageNo ).limit( 10 ) ) ; 
 };
 
 module.exports.detail = async ( req, res ) => {
-    console.log( req.body)
-    return  respond.ok( res, await FormTemplate.findOne( {_id:req.body.FormTemplateID}, {_id:0,__v:0} ) ) ; 
+    const FormTemplateID = req.params.FormTemplateID ;
+    return  respond.ok( res, await FormTemplate.findOne( {_id:FormTemplateID}, {_id:0,__v:0} ) ) ; 
 };

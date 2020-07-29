@@ -10,7 +10,7 @@ const formTemplateSchema = new db.Schema({
     Desc   : String,
     Data   : [{
         Que : String,
-        Opt : { type:db.Schema.Types.Array },
+        Opt : [],
         Typ : String,
         _id : false,
     }],
