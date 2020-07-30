@@ -63,7 +63,6 @@ module.exports.newRefreshToken = async ( res, user ) => {
         maxAge   : REFRESH_TOKEN_MAX_AGE ,
         httpOnly : true,
     }) ;
-    res.cookie( 'nextRefreshTime',  Date.now() + REFRESH_TOKEN_MAX_AGE / 2, {maxAge:REFRESH_TOKEN_MAX_AGE} ) ;
     return await userSave ;
 }
 

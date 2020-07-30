@@ -27,7 +27,7 @@ userSchema.statics.AddNewUser = async ( userData ) => {
 }
 
 userSchema.statics.LookUp = async ( { Email, Password } ) => {
-    const user = await User.findOne( { Email } , { Password:1, Type:1 } ) ;
+    const user = await User.findOne( { Email } , { Password:1, Type:1, Name:1 } ) ;
     if ( user ) {
         const passMatched = await bcrypt.compare( Password, user.Password ) ;
         if ( passMatched ) return user ;
