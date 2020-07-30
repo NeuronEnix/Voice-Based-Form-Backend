@@ -9,7 +9,7 @@ const errData = respond.errData ;
 const { ACCESS_TOKEN_KEY , ACCESS_TOKEN_EXPIRY  } = process.env ;
 const { REFRESH_TOKEN_KEY, REFRESH_TOKEN_EXPIRY } = process.env ;
 
-REFRESH_TOKEN_MAX_AGE = eval( process.env.REFRESH_TOKEN_MAX_AGE ) ;
+const REFRESH_TOKEN_MAX_AGE = eval( process.env.REFRESH_TOKEN_MAX_AGE ) ;
 const noAuthURL = new Set( [ '/user/sign-up', '/user/sign-in', '/user/sign-out', '/auth/access-token', '/auth/refresh-token', ] ) ;
 let ID = 1;
 
@@ -63,6 +63,7 @@ module.exports.newRefreshToken = async ( res, user ) => {
         maxAge   : REFRESH_TOKEN_MAX_AGE ,
         httpOnly : true,
     }) ;
+    res.cookie( 'nextRefreshTime',  Date.now() + REFRESH_TOKEN_MAX_AGE / 2, {maxAge:REFRESH_TOKEN_MAX_AGE} ) ;
     return await userSave ;
 }
 
