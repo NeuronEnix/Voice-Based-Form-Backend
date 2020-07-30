@@ -14,7 +14,7 @@ module.exports.signIn = async ( req, res ) => {
     const userCredential = req.body ;
     const user = await User.LookUp( userCredential ) ;
     await newRefreshToken( res, user ) ;
-    return respond.ok( res, { AccessToken : newAccessToken( user ), Type : user.Type } ) ;
+    return respond.ok( res, { AccessToken : newAccessToken( user ), Type : user.Type, Name : user.Name } ) ;
 }
 
 module.exports.signOut = ( req, res ) => {
