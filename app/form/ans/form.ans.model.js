@@ -6,7 +6,7 @@ const ObjectID = db.Schema.Types.ObjectId;
 const formAnsSchema = new db.Schema({
     UserID         : { type: ObjectID, index:true, ref:"users" },
     FormTemplateID : { type: ObjectID, index:true, ref:"users" },
-    Data           : [ String ],
+    Data           : [ ],
 });
 
 const FormAns = db.model( 'form_ans', formAnsSchema ) ;
